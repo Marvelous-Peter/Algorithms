@@ -20,7 +20,6 @@ public class Q69 {
             if (mid > sqrt) {
                 high = mid - 1;
             } else if (mid < sqrt) {
-                //此处不取 high = mid-1;的原因是我们判断是low<high,不是low<=high,左闭右开
                 low = mid + 1;
             }
         }
