@@ -22,6 +22,7 @@ public class Q198 {
         return dp[nums.length];
     }
 
+
     //O(1)
     public int rob2(int[] nums) {
         int pre = 0;
