@@ -40,6 +40,12 @@ public class ClimbingStairs {
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * 递归法
+     * 递归代码要警惕重复计算，使用数据结构（比如散列表）来保存已经求解过的 f(k)。
+     * 空间复杂度O(n)
+     */
     class Solution {
         Map<Integer, Integer> res = new HashMap<>();
 
@@ -54,9 +60,25 @@ public class ClimbingStairs {
                 return count;
             }
         }
-
-
     }
-//leetcode submit region end(Prohibit modification and deletion)
 
+    //leetcode submit region end(Prohibit modification and deletion)
+
+    /**
+     * 迭代循环
+     * 时间复杂度O(n)
+     * 空间复杂度O(1)
+     */
+    class Solution2 {
+        public int climbStairs(int n) {
+            if (n == 0 || n == 1 || n == 2) return n;
+            int c1 = 1;
+            int c2 = 2;
+            for (int i = 3; i <= n; i++) {
+                c2 = c1 + c2;
+                c1 = c2 - c1;
+            }
+            return c2;
+        }
+    }
 }
